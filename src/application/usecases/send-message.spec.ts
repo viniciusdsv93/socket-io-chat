@@ -10,6 +10,6 @@ describe('Send Message', () => {
       receiver: 'receiver_user',
       sender: 'sender_user'
     })
-    expect(writeFileSpy).toHaveBeenCalledWith(expect.anything(), 'content: test_content receiver: receiver_user sender: sender_user', expect.anything())
+    expect(writeFileSpy).toHaveBeenCalledWith(expect.anything(), 'content: test_content receiver: receiver_user sender: sender_user\n', expect.anything())
   });
 });
