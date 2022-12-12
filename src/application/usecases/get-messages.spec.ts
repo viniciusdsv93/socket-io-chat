@@ -9,4 +9,10 @@ describe('Send Message', () => {
     sut.get()
     expect(readFileSyncSpy).toHaveBeenCalledWith(path.resolve(__dirname, "..", "..", "..", "data", "chat.txt"))
   });
+
+  test('Should return a Chat object on success', async () => {
+    const sut = new GetMessages()
+    const result = await sut.get()
+    expect(result).toBe('')
+  });
 });
