@@ -6,10 +6,11 @@ describe('Send Message', () => {
     const sut = new SendMessage()
     const writeFileSpy = jest.spyOn(fs, 'appendFile')
     sut.send({
+      date: new Date().toLocaleString(),
       content: 'test_content',
       receiver: 'receiver_user',
       sender: 'sender_user'
     })
-    expect(writeFileSpy).toHaveBeenCalledWith(expect.anything(), `${new Date().toISOString()} content: test_content receiver: receiver_user sender: sender_user\n`, expect.anything())
+    expect(writeFileSpy).toHaveBeenCalledWith(expect.anything(), `${new Date().toLocaleString()} content: test_content receiver: receiver_user sender: sender_user\n`, expect.anything())
   });
 });
