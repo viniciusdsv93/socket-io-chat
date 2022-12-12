@@ -1,3 +1,6 @@
-import { App } from "./config/app";
+import { server } from "./config/app";
 
-new App();
+server.listen(3001, () => {
+  console.log(`Server running on http://localhost:3001`);
+  
+})
